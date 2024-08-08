@@ -10,6 +10,8 @@ import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 export class ReviewsController {
   constructor(private readonly reviewsService: ReviewsService) {}
 
+
+  //add una columna que indica si la review fue modificada por el admin o no, es un booleano
   @Post()
   create_review(@Body() data_user: CreateReviewDto) {
     return this.reviewsService.create_review(data_user);
